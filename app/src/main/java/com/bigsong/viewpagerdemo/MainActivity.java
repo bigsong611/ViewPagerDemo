@@ -9,6 +9,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.bigsong.viewpagerdemo.fragment.FragmentMainActivity;
+import com.bigsong.viewpagerdemo.fragmentAdapter.FragmentAdapterMainActivity;
 import com.bigsong.viewpagerdemo.traditionnal.TraditionalViewPagerAcvitity;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.List;
 public class MainActivity extends Activity {
     private ListView mListView;
     private ArrayAdapter<String> mAdapter;
-    private List<String> mData = new ArrayList<String>(Arrays.asList("Traditional ViewPager", "FragmentManager & Fragment"));
+    private List<String> mData = new ArrayList<String>(Arrays.asList("Traditional ViewPager", "FragmentManager & Fragment", "ViewPager & FragmentPagerAdapter"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +40,9 @@ public class MainActivity extends Activity {
                         break;
                     case 1:
                         intent = new Intent(MainActivity.this, FragmentMainActivity.class);
+                        break;
+                    case 2:
+                        intent = new Intent(MainActivity.this, FragmentAdapterMainActivity.class);
                         break;
                 }
                 startActivity(intent);
