@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
+import com.bigsong.viewpagerdemo.fragment.FragmentMainActivity;
 import com.bigsong.viewpagerdemo.traditionnal.TraditionalViewPagerAcvitity;
 
 import java.util.ArrayList;
@@ -18,7 +19,7 @@ import java.util.List;
 public class MainActivity extends Activity {
     private ListView mListView;
     private ArrayAdapter<String> mAdapter;
-    private List<String> mData = new ArrayList<String>(Arrays.asList("Traditional ViewPager" , "FragmentManager & Fragment"));
+    private List<String> mData = new ArrayList<String>(Arrays.asList("Traditional ViewPager", "FragmentManager & Fragment"));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +27,18 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         mListView = (ListView) findViewById(R.id.id_listview);
-        mAdapter = new ArrayAdapter<String>(this,android.R.layout.simple_list_item_1,mData);
+        mAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, mData);
         mListView.setAdapter(mAdapter);
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = null;
-                switch (position){
+                switch (position) {
                     case 0:
                         intent = new Intent(MainActivity.this, TraditionalViewPagerAcvitity.class);
+                        break;
+                    case 1:
+                        intent = new Intent(MainActivity.this, FragmentMainActivity.class);
                         break;
                 }
                 startActivity(intent);

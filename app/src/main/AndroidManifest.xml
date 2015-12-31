@@ -21,6 +21,8 @@
             android:label="@string/title_activity_traditional_view_pager_acvitity"
             android:theme="@style/AppTheme.NoActionBar" >
         </activity>
+        <activity android:name=".fragment.FragmentMainActivity" >
+        </activity>
     </application>
 
 </manifest>
